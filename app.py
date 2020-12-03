@@ -20,6 +20,8 @@ def create_homepage():
 @app.route("/questions")
 def generate_questions():
     """ Gets user selected story and returns html with that story's prompts"""
+    """TO-DO: Just loop through instead of doing comprehension
+    or could also create a class method on Story class to find story by title"""
     story = [story for story in stories_list
             if story.title == request.args["story-selection"]]
     prompts = story[0].prompts
