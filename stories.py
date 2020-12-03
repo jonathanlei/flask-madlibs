@@ -18,11 +18,12 @@ class Story:
         'I love to eat a good mango.'
     """
 
-    def __init__(self, words, text):
+    def __init__(self, words, text, title):
         """Create story with words and template text."""
 
         self.prompts = words
         self.template = text
+        self.title = title
 
     def generate(self, answers):
         """Substitute answers into text."""
@@ -40,7 +41,8 @@ class Story:
 silly_story = Story(
     ["place", "noun", "verb", "adjective", "plural_noun"],
     """Once upon a time, in a long-ago {place}, there lived an exceptionally
-       {adjective} {noun}. It loved to {verb} with {plural_noun}."""
+       {adjective} {noun}. It loved to {verb} with {plural_noun}.""",
+    "Silly Story"
 )
 
 # Here's another --- you should be able to swap in app.py to use this story,
@@ -48,5 +50,8 @@ silly_story = Story(
 
 excited_story = Story(
     ["noun", "verb"],
-    """OMG!! OMG!! I love to {verb} a {noun}!"""
+    """OMG!! OMG!! I love to {verb} a {noun}!""",
+    "Excited Story"
 )
+
+stories_list = [silly_story, excited_story]
